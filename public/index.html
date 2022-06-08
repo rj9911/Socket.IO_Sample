@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
-   
+    <script defer src="script.js"></script>
+   <!-- defer means that script will be load after the DOM has been loaded -->
 </head>
 <body>
     <h1>Socket.IO-sample</h1>
+    <button id="boom">Boom</button>
 </body>
 </html>

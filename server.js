@@ -13,6 +13,13 @@ const io = socketio(server)
 
 io.on('connection' ,(socket) => {
     console.log('connected with socket id =' , socket.id)
+
+    socket.on('boom' , ()=>{  // when boom event happens this function runs
+      console.log('boom recieved from' , socket.id) //when you click on boom button the socke.id gets printed in terminal 
+    })
+    setInterval(()=> {    // after the 2ms interval whizz runs
+        socket.emit('whizz')
+    },2000)
 })
 
 app.use('/' , express.static(__dirname + '/public'))
